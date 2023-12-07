@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.6d94f49f.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"杂谈/配置文件/index.md","filePath":"杂谈/配置文件/index.md","lastUpdated":1701275547000}'),n={name:"杂谈/配置文件/index.md"};function r(o,s,d,c,i,p){return t(),a("div")}const f=e(n,[["render",r]]);export{m as __pageData,f as default};
