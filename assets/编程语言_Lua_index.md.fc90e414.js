@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.6d94f49f.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"编程语言/Lua/index.md","filePath":"编程语言/Lua/index.md","lastUpdated":1701965072000}'),n={name:"编程语言/Lua/index.md"};function r(o,s,d,c,i,p){return t(),a("div")}const f=e(n,[["render",r]]);export{m as __pageData,f as default};

@@ -1,0 +1,101 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.3daba8ea.js";const d=JSON.parse('{"title":"case","description":null,"frontmatter":{"lang":"zh-CN","title":"case","description":null},"headers":[],"relativePath":"doc/编程语言/Shell/基础/控制结构/case.md","filePath":"packages/doc/src/编程语言/Shell/基础/控制结构/case.md","lastUpdated":1702458087000}'),p={name:"doc/编程语言/Shell/基础/控制结构/case.md"},e=l(`<h1 id="case-esac" tabindex="-1">case ... esac <a class="header-anchor" href="#case-esac" aria-label="Permalink to &quot;case ... esac&quot;">​</a></h1><p>case ... esac 为多选择语句，与其他语言中的 switch ... case 语句类似，是一种多分支选择结构，每个 case 分支用右圆括号开始，用两个分号 ;; 表示 break，即执行结束，跳出整个 case ... esac 语句，esac（就是 case 反过来）作为结束标记。</p><p>可以用 case 语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。</p><div class="language-shell vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#F97583;">case</span><span style="color:#E1E4E8;"> 值 </span><span style="color:#F97583;">in</span></span>
+<span class="line"><span style="color:#E1E4E8;">模式1)</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">command1</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">command2</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">...</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">commandN</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">模式2)</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">command1</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">command2</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">...</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">commandN</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#F97583;">esac</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#D73A49;">case</span><span style="color:#24292E;"> 值 </span><span style="color:#D73A49;">in</span></span>
+<span class="line"><span style="color:#24292E;">模式1)</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">command1</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">command2</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">...</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">commandN</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#24292E;">模式2)</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">command1</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">command2</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">...</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">commandN</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#D73A49;">esac</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>case 工作方式如上所示，取值后面必须为单词 in，每一模式必须以右括号结束。取值可以为变量或常数，匹配发现取值符合某一模式后，其间所有命令开始执行直至 ;;。</p><p>取值将检测匹配的每一个模式。一旦模式匹配，则执行完匹配模式相应命令后不再继续其他模式。如果无一匹配模式，使用星号 * 捕获该值，再执行后面的命令。</p><div class="language-shell vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#79B8FF;">echo</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;输入 1 到 4 之间的数字:&#39;</span></span>
+<span class="line"><span style="color:#79B8FF;">echo</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;你输入的数字为:&#39;</span></span>
+<span class="line"><span style="color:#79B8FF;">read</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">aNum</span></span>
+<span class="line"><span style="color:#F97583;">case</span><span style="color:#E1E4E8;"> $aNum </span><span style="color:#F97583;">in</span></span>
+<span class="line"><span style="color:#E1E4E8;">    1)  echo </span><span style="color:#9ECBFF;">&#39;你选择了 1&#39;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    2)  echo </span><span style="color:#9ECBFF;">&#39;你选择了 2&#39;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    3)  echo </span><span style="color:#9ECBFF;">&#39;你选择了 3&#39;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    4)  echo </span><span style="color:#9ECBFF;">&#39;你选择了 4&#39;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#F97583;">*</span><span style="color:#E1E4E8;">)  echo </span><span style="color:#9ECBFF;">&#39;你没有输入 1 到 4 之间的数字&#39;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    ;;</span></span>
+<span class="line"><span style="color:#F97583;">esac</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#005CC5;">echo</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;输入 1 到 4 之间的数字:&#39;</span></span>
+<span class="line"><span style="color:#005CC5;">echo</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;你输入的数字为:&#39;</span></span>
+<span class="line"><span style="color:#005CC5;">read</span><span style="color:#24292E;"> </span><span style="color:#032F62;">aNum</span></span>
+<span class="line"><span style="color:#D73A49;">case</span><span style="color:#24292E;"> $aNum </span><span style="color:#D73A49;">in</span></span>
+<span class="line"><span style="color:#24292E;">    1)  echo </span><span style="color:#032F62;">&#39;你选择了 1&#39;</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#24292E;">    2)  echo </span><span style="color:#032F62;">&#39;你选择了 2&#39;</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#24292E;">    3)  echo </span><span style="color:#032F62;">&#39;你选择了 3&#39;</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#24292E;">    4)  echo </span><span style="color:#032F62;">&#39;你选择了 4&#39;</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#D73A49;">*</span><span style="color:#24292E;">)  echo </span><span style="color:#032F62;">&#39;你没有输入 1 到 4 之间的数字&#39;</span></span>
+<span class="line"><span style="color:#24292E;">    ;;</span></span>
+<span class="line"><span style="color:#D73A49;">esac</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h1 id="break" tabindex="-1">break <a class="header-anchor" href="#break" aria-label="Permalink to &quot;break&quot;">​</a></h1><div class="language-shell vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#F97583;">while</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">:</span></span>
+<span class="line"><span style="color:#F97583;">do</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">echo</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">-n</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&quot;输入 1 到 5 之间的数字:&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">read</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">aNum</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#F97583;">case</span><span style="color:#E1E4E8;"> $aNum </span><span style="color:#F97583;">in</span></span>
+<span class="line"><span style="color:#E1E4E8;">        1|2|3|4|5) echo </span><span style="color:#9ECBFF;">&quot;你输入的数字为 </span><span style="color:#E1E4E8;">$aNum</span><span style="color:#9ECBFF;">!&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">        ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#F97583;">*</span><span style="color:#E1E4E8;">) echo </span><span style="color:#9ECBFF;">&quot;你输入的数字不是 1 到 5 之间的! 游戏结束&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">            </span><span style="color:#F97583;">break</span></span>
+<span class="line"><span style="color:#E1E4E8;">        ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#F97583;">esac</span></span>
+<span class="line"><span style="color:#F97583;">done</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#D73A49;">while</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">:</span></span>
+<span class="line"><span style="color:#D73A49;">do</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">echo</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">-n</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&quot;输入 1 到 5 之间的数字:&quot;</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">read</span><span style="color:#24292E;"> </span><span style="color:#032F62;">aNum</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#D73A49;">case</span><span style="color:#24292E;"> $aNum </span><span style="color:#D73A49;">in</span></span>
+<span class="line"><span style="color:#24292E;">        1|2|3|4|5) echo </span><span style="color:#032F62;">&quot;你输入的数字为 </span><span style="color:#24292E;">$aNum</span><span style="color:#032F62;">!&quot;</span></span>
+<span class="line"><span style="color:#24292E;">        ;;</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#D73A49;">*</span><span style="color:#24292E;">) echo </span><span style="color:#032F62;">&quot;你输入的数字不是 1 到 5 之间的! 游戏结束&quot;</span></span>
+<span class="line"><span style="color:#24292E;">            </span><span style="color:#D73A49;">break</span></span>
+<span class="line"><span style="color:#24292E;">        ;;</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#D73A49;">esac</span></span>
+<span class="line"><span style="color:#D73A49;">done</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h1 id="continue" tabindex="-1">continue <a class="header-anchor" href="#continue" aria-label="Permalink to &quot;continue&quot;">​</a></h1><div class="language-shell vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#F97583;">while</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">:</span></span>
+<span class="line"><span style="color:#F97583;">do</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">echo</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">-n</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&quot;输入 1 到 5 之间的数字: &quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#79B8FF;">read</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">aNum</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#F97583;">case</span><span style="color:#E1E4E8;"> $aNum </span><span style="color:#F97583;">in</span></span>
+<span class="line"><span style="color:#E1E4E8;">        1|2|3|4|5) echo </span><span style="color:#9ECBFF;">&quot;你输入的数字为 </span><span style="color:#E1E4E8;">$aNum</span><span style="color:#9ECBFF;">!&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">        ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#F97583;">*</span><span style="color:#E1E4E8;">) echo </span><span style="color:#9ECBFF;">&quot;你输入的数字不是 1 到 5 之间的!&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">            </span><span style="color:#F97583;">continue</span></span>
+<span class="line"><span style="color:#E1E4E8;">            </span><span style="color:#79B8FF;">echo</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&quot;游戏结束&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">        ;;</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#F97583;">esac</span></span>
+<span class="line"><span style="color:#F97583;">done</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#D73A49;">while</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">:</span></span>
+<span class="line"><span style="color:#D73A49;">do</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">echo</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">-n</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&quot;输入 1 到 5 之间的数字: &quot;</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#005CC5;">read</span><span style="color:#24292E;"> </span><span style="color:#032F62;">aNum</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#D73A49;">case</span><span style="color:#24292E;"> $aNum </span><span style="color:#D73A49;">in</span></span>
+<span class="line"><span style="color:#24292E;">        1|2|3|4|5) echo </span><span style="color:#032F62;">&quot;你输入的数字为 </span><span style="color:#24292E;">$aNum</span><span style="color:#032F62;">!&quot;</span></span>
+<span class="line"><span style="color:#24292E;">        ;;</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#D73A49;">*</span><span style="color:#24292E;">) echo </span><span style="color:#032F62;">&quot;你输入的数字不是 1 到 5 之间的!&quot;</span></span>
+<span class="line"><span style="color:#24292E;">            </span><span style="color:#D73A49;">continue</span></span>
+<span class="line"><span style="color:#24292E;">            </span><span style="color:#005CC5;">echo</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&quot;游戏结束&quot;</span></span>
+<span class="line"><span style="color:#24292E;">        ;;</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#D73A49;">esac</span></span>
+<span class="line"><span style="color:#D73A49;">done</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div>`,11),o=[e];function c(r,t,i,E,y,u){return n(),a("div",null,o)}const m=s(p,[["render",c]]);export{d as __pageData,m as default};

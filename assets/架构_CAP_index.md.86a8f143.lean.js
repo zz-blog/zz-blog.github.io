@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.6d94f49f.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"架构/CAP/index.md","filePath":"架构/CAP/index.md","lastUpdated":1700319152000}'),n={name:"架构/CAP/index.md"};function r(o,s,d,c,i,p){return t(),a("div")}const f=e(n,[["render",r]]);export{m as __pageData,f as default};
