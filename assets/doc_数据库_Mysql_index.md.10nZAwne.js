@@ -1,0 +1,84 @@
+import{_ as s,c as n,o as a,U as e}from"./chunks/framework.9QHaLlVJ.js";const h=JSON.parse('{"title":"MYSQL知识点总结","description":null,"frontmatter":{"lang":"zh-CN","title":"MYSQL知识点总结","description":null},"headers":[],"relativePath":"doc/数据库/Mysql/index.md","filePath":"packages/doc/src/数据库/Mysql/index.md","lastUpdated":1702458087000}'),p={name:"doc/数据库/Mysql/index.md"},l=e(`<h1 id="mysql知识点总结" tabindex="-1">mysql知识点总结 <a class="header-anchor" href="#mysql知识点总结" aria-label="Permalink to &quot;mysql知识点总结&quot;">​</a></h1><ul><li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noreferrer">官方文档</a></li></ul><h1 id="基础" tabindex="-1">基础 <a class="header-anchor" href="#基础" aria-label="Permalink to &quot;基础&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>1.架构</span></span>
+<span class="line"><span>客户端</span></span>
+<span class="line"><span>server层</span></span>
+<span class="line"><span>存储引擎层</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2.三大范式</span></span>
+<span class="line"><span>第一范式1NF：确保数据库表字段的原子性</span></span>
+<span class="line"><span>第二范式2NF：首先要满足第一范式，另外包含两部分内容，一是表必须有一个主键；二是非主键列必须完全依赖于主键，而不能只依赖于主键的一部分。</span></span>
+<span class="line"><span>第三范式3NF：首先要满足第二范式，另外非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列 A 依赖于非主键列 B，非主键列 B 依赖于主键的情况。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h1 id="事务" tabindex="-1">事务 <a class="header-anchor" href="#事务" aria-label="Permalink to &quot;事务&quot;">​</a></h1><ul><li>隔离级别</li></ul><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>读已提交</span></span>
+<span class="line"><span>读未提交</span></span>
+<span class="line"><span>可重复读</span></span>
+<span class="line"><span>串行化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>脏读、不可重复读、幻读</span></span>
+<span class="line"><span>脏读是指在一个事务处理过程里读取了另一个未提交的事务中的数据。</span></span>
+<span class="line"><span>不可重复读是指在对于数据库中的某行记录，一个事务范围内多次查询却返回了不同的数据值，这是由于在查询间隔，另一个事务修改了数据并提交了。</span></span>
+<span class="line"><span>幻读是当某个事务在读取某个范围内的记录时，另外一个事务又在该范围内插入了新的记录，当之前的事务再次读取该范围的记录时，会产生幻行，就像产生幻觉一样，这就是发生了幻读。</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>四大特性</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>ACID：原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）</span></span>
+<span class="line"><span>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚。</span></span>
+<span class="line"><span>一致性是指一个事务执行之前和执行之后都必须处于一致性状态。比如a与b账户共有1000块，两人之间转账之后无论成功还是失败，它们的账户总和还是1000。</span></span>
+<span class="line"><span>隔离性。跟隔离级别相关，如read committed，一个事务只能读到已经提交的修改。</span></span>
+<span class="line"><span>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>MVCC</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>概念，原理</span></span>
+<span class="line"><span>快照读，当前读</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>锁</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>全局锁</span></span>
+<span class="line"><span>表锁</span></span>
+<span class="line"><span>行锁</span></span>
+<span class="line"><span>gap锁</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>共享锁</span></span>
+<span class="line"><span>排它锁</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>意向锁</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>乐观锁</span></span>
+<span class="line"><span>悲观锁</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h1 id="索引" tabindex="-1">索引 <a class="header-anchor" href="#索引" aria-label="Permalink to &quot;索引&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>聚簇索引，单值索引，联合索引，复合主键，前缀索引</span></span>
+<span class="line"><span>全文索引，hash索引</span></span>
+<span class="line"><span>最左匹配原则</span></span>
+<span class="line"><span>索引下推</span></span>
+<span class="line"><span>索引失效的场景</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>B+树</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>B+树的构造特点，规律</span></span>
+<span class="line"><span>与B树的区别</span></span>
+<span class="line"><span>一颗M阶，高度为3的B+树能存多少数据</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>Buffer Pool</li><li>explain执行计划</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>执行计划概念，各个字段含义</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><h1 id="日志" tabindex="-1">日志 <a class="header-anchor" href="#日志" aria-label="Permalink to &quot;日志&quot;">​</a></h1><ul><li>redo log</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>Buffer Pool</span></span>
+<span class="line"><span>Change Buffer</span></span>
+<span class="line"><span>Page</span></span>
+<span class="line"><span>Checkpoint</span></span>
+<span class="line"><span>wrtite pos</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>redo log作用</span></span>
+<span class="line"><span>redo log构造</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>undo log</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>概念，作用</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><ul><li>binlog</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>概念，作用</span></span>
+<span class="line"><span>state模式</span></span>
+<span class="line"><span>row模式</span></span>
+<span class="line"><span>混合模式</span></span>
+<span class="line"><span>各种模式的优缺点</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>general log</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>概念，作用</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><ul><li>error log</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>概念，作用</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><h1 id="sql" tabindex="-1">SQL <a class="header-anchor" href="#sql" aria-label="Permalink to &quot;SQL&quot;">​</a></h1><ul><li>各种join的概念</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>left join</span></span>
+<span class="line"><span>right join</span></span>
+<span class="line"><span>outer join</span></span>
+<span class="line"><span>inner join</span></span>
+<span class="line"><span>join</span></span>
+<span class="line"><span>full join</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>sql优化</li></ul><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>where 优化</span></span>
+<span class="line"><span>in 优化</span></span>
+<span class="line"><span>on 优化</span></span>
+<span class="line"><span>&gt; &lt; 区间优化</span></span>
+<span class="line"><span>索引优化</span></span>
+<span class="line"><span>查询语句的执行流程</span></span>
+<span class="line"><span>update语句的执行流程</span></span>
+<span class="line"><span>exist和in的区别</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h1 id="存储引擎" tabindex="-1">存储引擎 <a class="header-anchor" href="#存储引擎" aria-label="Permalink to &quot;存储引擎&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>innodb</span></span>
+<span class="line"><span>myisam</span></span>
+<span class="line"><span>memory</span></span>
+<span class="line"><span>archive</span></span>
+<span class="line"><span>blackhole</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h1 id="优化" tabindex="-1">优化 <a class="header-anchor" href="#优化" aria-label="Permalink to &quot;优化&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>1.分库分表</span></span>
+<span class="line"><span>2.索引优化</span></span>
+<span class="line"><span>3.增加冗余字段</span></span>
+<span class="line"><span>4.XA</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="排查线上问题" tabindex="-1">排查线上问题 <a class="header-anchor" href="#排查线上问题" aria-label="Permalink to &quot;排查线上问题&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>show processlist</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><h1 id="架构" tabindex="-1">架构 <a class="header-anchor" href="#架构" aria-label="Permalink to &quot;架构&quot;">​</a></h1><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>1.读写分离</span></span>
+<span class="line"><span>主写，从读</span></span>
+<span class="line"><span>2.分库分表</span></span>
+<span class="line"><span>垂直分表、垂直分库、水平分表、水平分库</span></span>
+<span class="line"><span>3.跨节点 Join 的问题</span></span>
+<span class="line"><span>4.全局ID方案</span></span>
+<span class="line"><span>5.分区表</span></span>
+<span class="line"><span>6.主从复制</span></span>
+<span class="line"><span>概念</span></span>
+<span class="line"><span>同步复制，优缺点</span></span>
+<span class="line"><span>半同步复制，优缺点</span></span>
+<span class="line"><span>架构模式</span></span>
+<span class="line"><span>WAL</span></span>
+<span class="line"><span>MTR</span></span>
+<span class="line"><span>MBR</span></span>
+<span class="line"><span>GRT</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div>`,43),i=[l];function r(c,t,b,u,d,o){return a(),n("div",null,i)}const v=s(p,[["render",r]]);export{h as __pageData,v as default};
