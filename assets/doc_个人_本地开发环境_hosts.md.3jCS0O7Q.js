@@ -1,0 +1,15 @@
+import{_ as s,c as a,o as n,a5 as i}from"./chunks/framework.DwbewbAn.js";const b=JSON.parse('{"title":"添加hosts","description":"","frontmatter":{"order":1},"headers":[],"relativePath":"doc/个人/本地开发环境/hosts.md","filePath":"packages/doc/src/个人/本地开发环境/hosts.md","lastUpdated":1704107537000}'),e={name:"doc/个人/本地开发环境/hosts.md"},l=i(`<h1 id="添加hosts" tabindex="-1">添加hosts <a class="header-anchor" href="#添加hosts" aria-label="Permalink to &quot;添加hosts&quot;">​</a></h1><div class="language-shell vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">shell</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">cat</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> &gt;&gt;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /etc/hosts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> &lt;&lt;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> EOF</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"># ZZ HOSTS START</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.4 k8s-master</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.5 k8s-node1</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.6 k8s-node2</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.10 k8s-nfs</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.11 k8s-harbor</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.12 k8s-devops</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">192.168.200.253 zzenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"># ZZ HOSTS END</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">EOF</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div>`,2),p=[l];function t(r,h,c,k,d,o){return n(),a("div",null,p)}const m=s(e,[["render",t]]);export{b as __pageData,m as default};

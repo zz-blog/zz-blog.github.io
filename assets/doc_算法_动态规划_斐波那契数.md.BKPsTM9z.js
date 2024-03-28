@@ -1,0 +1,28 @@
+import{_ as n,c as e,m as s,a as p,t as l,a5 as i,o as r}from"./chunks/framework.DwbewbAn.js";const f=JSON.parse('{"title":"斐波那契数 [未完成]","description":"","frontmatter":{"title":"斐波那契数 [未完成]"},"headers":[],"relativePath":"doc/算法/动态规划/斐波那契数.md","filePath":"packages/doc/src/算法/动态规划/斐波那契数.md","lastUpdated":1709220761000}'),t={name:"doc/算法/动态规划/斐波那契数.md"},c={id:"frontmatter-title",tabindex:"-1"},b=s("a",{class:"header-anchor",href:"#frontmatter-title","aria-label":'Permalink to "{{ $frontmatter.title }}"'},"​",-1),o=i(`<ul><li><a href="https://leetcode.cn/problems/fibonacci-number" target="_blank" rel="noreferrer">中 leetcode</a></li><li><a href="https://leetcode.com/problems/fibonacci-number" target="_blank" rel="noreferrer">外 leetcode</a></li></ul><h2 id="题目" tabindex="-1">题目 <a class="header-anchor" href="#题目" aria-label="Permalink to &quot;题目&quot;">​</a></h2><div class="language-text vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>斐波那契数 （通常用 F(n) 表示）形成的序列称为 斐波那契数列 。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>F(0) = 0，F(1) = 1</span></span>
+<span class="line"><span>F(n) = F(n - 1) + F(n - 2)，其中 n &gt; 1</span></span>
+<span class="line"><span>给定 n ，请计算 F(n) 。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>示例 1：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>输入：n = 2</span></span>
+<span class="line"><span>输出：1</span></span>
+<span class="line"><span>解释：F(2) = F(1) + F(0) = 1 + 0 = 1</span></span>
+<span class="line"><span>示例 2：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>输入：n = 3</span></span>
+<span class="line"><span>输出：2</span></span>
+<span class="line"><span>解释：F(3) = F(2) + F(1) = 1 + 1 = 2</span></span>
+<span class="line"><span>示例 3：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>输入：n = 4</span></span>
+<span class="line"><span>输出：3</span></span>
+<span class="line"><span>解释：F(4) = F(3) + F(2) = 2 + 1 = 3</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>提示：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>0 &lt;= n &lt;= 30</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="思路" tabindex="-1">思路 <a class="header-anchor" href="#思路" aria-label="Permalink to &quot;思路&quot;">​</a></h2><p>最直观的方式就是根据题意，倒推每一项的值，然后计算</p><p>倒推的过程中，会发现有重复计算值的情况，可以进行优化</p><ul><li>使用2个变量从1,2开始正向推导，时间复杂度O(n)</li><li>矩阵快速幂,时间复杂度O(logn)</li></ul><h2 id="代码" tabindex="-1">代码 <a class="header-anchor" href="#代码" aria-label="Permalink to &quot;代码&quot;">​</a></h2><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-Wzy7V" id="tab-1pV20yj" checked="checked"><label for="tab-1pV20yj">递归</label><input type="radio" name="group-Wzy7V" id="tab-9KlrjXa"><label for="tab-9KlrjXa">动态规划1</label><input type="radio" name="group-Wzy7V" id="tab-ysxPNq4"><label for="tab-ysxPNq4">矩阵快速幂</label></div><div class="blocks"><div class="language-go vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-go vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-go vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div></div></div>`,9);function d(a,u,m,h,g,v){return r(),e("div",null,[s("h1",c,[p(l(a.$frontmatter.title)+" ",1),b]),o])}const k=n(t,[["render",d]]);export{f as __pageData,k as default};
