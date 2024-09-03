@@ -1,0 +1,74 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "仔仔的小窝",
+    "home_page_url": "https://blog.zdog.top/",
+    "feed_url": "https://blog.zdog.top/feed.json",
+    "description": "个人博客",
+    "icon": "https://valaxy.site/valaxy-logo.png",
+    "author": {
+        "name": "仔仔",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "",
+            "content_html": "<h1>{{ $frontmatter.title }}</h1>\n<h2>Java Path</h2>\n<p>Java Path 通常指的是JDK的安装路径。JDK是Java Development Kit的缩写，它包含了Ja</p>\n<br/><p>访问 <a href=\"https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable\" target=\"_blank\">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable</a> 阅读全文。</p>",
+            "url": "https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable",
+            "title": "jdk环境变量",
+            "date_modified": "2024-09-03T00:00:00.000Z",
+            "date_published": "2024-09-03T00:00:00.000Z",
+            "author": {
+                "name": "仔仔",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h1>{{ $frontmatter.title }}</h1>\n<h2>各厂家jdk区别</h2>\n<ul>\n<li>\n<p>OpenJDK<br>\n​OpenJDK 是 JDK 的社区版，社区主要由Oracle主导，免费。</p>\n</li>\n<li>\n<p>Oracle J</p>\n</li>\n</ul>\n<br/><p>访问 <a href=\"https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce\" target=\"_blank\">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce</a> 阅读全文。</p>",
+            "url": "https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce",
+            "title": "jdk介绍",
+            "date_modified": "2024-09-03T00:00:00.000Z",
+            "date_published": "2024-09-03T00:00:00.000Z",
+            "author": {
+                "name": "仔仔",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h1>{{ $frontmatter.title }}</h1>\n<ul>\n<li><a href=\"https://www.jenv.be/\">jenv 官网</a></li>\n<li>[jenv github](<a href=\"https://github.com/jen\">https://github.com/jen</a></li>\n</ul>\n<br/><p>访问 <a href=\"https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv\" target=\"_blank\">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv</a> 阅读全文。</p>",
+            "url": "https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv",
+            "title": "jenv",
+            "date_modified": "2024-09-03T00:00:00.000Z",
+            "date_published": "2024-09-03T00:00:00.000Z",
+            "author": {
+                "name": "仔仔",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h1>{{ $frontmatter.title }}</h1>\n<p>假设已下载好安装包。</p>\n<h2>如何安装</h2>\n<pre><code class=\"language-shell\">tar -zxvf xxx.tar.gz\n\nmv java-se-8u41-ri /</code></pre>\n<br/><p>访问 <a href=\"https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk\" target=\"_blank\">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk</a> 阅读全文。</p>",
+            "url": "https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk",
+            "title": "Linux安装jdk",
+            "date_modified": "2024-09-03T00:00:00.000Z",
+            "date_published": "2024-09-03T00:00:00.000Z",
+            "author": {
+                "name": "仔仔",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h1>{{ $frontmatter.title }}</h1>\n<ul>\n<li><a href=\"https://adoptium.net/zh-CN/temurin/releases/\">adoptium</a></li>\n<li>[openlogic]</li>\n</ul>\n<br/><p>访问 <a href=\"https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk\" target=\"_blank\">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk</a> 阅读全文。</p>",
+            "url": "https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk",
+            "title": "windows安装jdk",
+            "date_modified": "2024-09-03T00:00:00.000Z",
+            "date_published": "2024-09-03T00:00:00.000Z",
+            "author": {
+                "name": "仔仔",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}

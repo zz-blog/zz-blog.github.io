@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>仔仔的小窝</title>
+        <link>https://blog.zdog.top/</link>
+        <description>个人博客</description>
+        <lastBuildDate>Tue, 03 Sep 2024 10:14:07 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>仔仔的小窝</title>
+            <url>https://valaxy.site/valaxy-logo.png</url>
+            <link>https://blog.zdog.top/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2024 © 仔仔</copyright>
+        <atom:link href="https://blog.zdog.top/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[jdk环境变量]]></title>
+            <link>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable</link>
+            <guid>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable</guid>
+            <pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>{{ $frontmatter.title }}</h1>
+<h2>Java Path</h2>
+<p>Java Path 通常指的是JDK的安装路径。JDK是Java Development Kit的缩写，它包含了Ja</p>
+<br/><p>访问 <a href="https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable" target="_blank">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-environment-variable</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (仔仔)</author>
+        </item>
+        <item>
+            <title><![CDATA[jdk介绍]]></title>
+            <link>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce</link>
+            <guid>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce</guid>
+            <pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>{{ $frontmatter.title }}</h1>
+<h2>各厂家jdk区别</h2>
+<ul>
+<li>
+<p>OpenJDK<br>
+​OpenJDK 是 JDK 的社区版，社区主要由Oracle主导，免费。</p>
+</li>
+<li>
+<p>Oracle J</p>
+</li>
+</ul>
+<br/><p>访问 <a href="https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce" target="_blank">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jdk-introduce</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (仔仔)</author>
+        </item>
+        <item>
+            <title><![CDATA[jenv]]></title>
+            <link>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv</link>
+            <guid>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv</guid>
+            <pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>{{ $frontmatter.title }}</h1>
+<ul>
+<li><a href="https://www.jenv.be/">jenv 官网</a></li>
+<li>[jenv github](<a href="https://github.com/jen">https://github.com/jen</a></li>
+</ul>
+<br/><p>访问 <a href="https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv" target="_blank">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/jenv</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (仔仔)</author>
+        </item>
+        <item>
+            <title><![CDATA[Linux安装jdk]]></title>
+            <link>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk</link>
+            <guid>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk</guid>
+            <pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>{{ $frontmatter.title }}</h1>
+<p>假设已下载好安装包。</p>
+<h2>如何安装</h2>
+<pre><code class="language-shell">tar -zxvf xxx.tar.gz
+
+mv java-se-8u41-ri /</code></pre>
+<br/><p>访问 <a href="https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk" target="_blank">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/linux-install-jdk</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (仔仔)</author>
+        </item>
+        <item>
+            <title><![CDATA[windows安装jdk]]></title>
+            <link>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk</link>
+            <guid>https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk</guid>
+            <pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>{{ $frontmatter.title }}</h1>
+<ul>
+<li><a href="https://adoptium.net/zh-CN/temurin/releases/">adoptium</a></li>
+<li>[openlogic]</li>
+</ul>
+<br/><p>访问 <a href="https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk" target="_blank">https://blog.zdog.top/posts/java-technology-stack/java-base/build-environment/windows-install-jdk</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (仔仔)</author>
+        </item>
+    </channel>
+</rss>
